@@ -11,7 +11,25 @@ MODEL_PATH = 'steganalysis_cnn_model.h5'
 # The image size your model was trained on. Must match IMAGE_SIZE in the training script.
 IMAGE_SIZE = (128, 128)
 
-# --- Load the trained model ---
+# --- Streamlit App Layout (MUST BE FIRST STREAMLIT CALL) ---
+st.set_page_config(
+    page_title="Steganalysis Detector",
+    page_icon="🕵️‍♀️",
+    layout="centered",
+    initial_sidebar_state="auto"
+)
+
+st.title("🕵️‍♀️ Steganalysis Detector")
+st.markdown("""
+    Upload an image to detect if it contains hidden steganographic data.
+    This tool uses a Convolutional Neural Network (CNN) trained to identify subtle patterns
+    introduced by steganography.
+""")
+
+st.markdown("---")
+
+
+# --- Load the trained model (Moved AFTER set_page_config) ---
 @st.cache_resource # Cache the model loading to avoid reloading on every rerun
 def load_steganalysis_model():
     """Loads the pre-trained CNN model."""
@@ -26,6 +44,7 @@ def load_steganalysis_model():
         st.stop()
 
 model = load_steganalysis_model()
+
 
 # --- Preprocessing function for uploaded images ---
 def preprocess_image(img, target_size=IMAGE_SIZE):
@@ -43,22 +62,6 @@ def preprocess_image(img, target_size=IMAGE_SIZE):
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
 
-# --- Streamlit App Layout ---
-st.set_page_config(
-    page_title="Steganalysis Detector",
-    page_icon="🕵️‍♀️",
-    layout="centered",
-    initial_sidebar_state="auto"
-)
-
-st.title("🕵️‍♀️ Steganalysis Detector")
-st.markdown("""
-    Upload an image to detect if it contains hidden steganographic data.
-    This tool uses a Convolutional Neural Network (CNN) trained to identify subtle patterns
-    introduced by steganography.
-""")
-
-st.markdown("---")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "bmp"])
 
