@@ -1,6 +1,6 @@
 # 🕵️‍♀️ Steganography Detector
 
-Uncover the invisible\! This project presents a powerful CNN-based steganalysis tool designed to **detect hidden data** embedded within images, complete with an intuitive Streamlit web application for real-time analysis.
+Uncover the invisible\! This project presents a powerful CNN-based steganalysis tool designed to **detect** hidden data embedded within images, complete with an intuitive Streamlit web application for real-time analysis.
 **NOTEBOOK**: https://www.kaggle.com/code/zobayer0x01/steganography-detector
 
 ## 🌟 Features
