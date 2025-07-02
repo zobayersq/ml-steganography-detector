@@ -1,6 +1,6 @@
 # 🕵️‍♀️ Steganography Detector
 
-Uncover the invisible\! This project presents a powerful CNN-based steganalysis tool designed to detect hidden data embedded within images, complete with an intuitive Streamlit web application for real-time analysis.
+Uncover the invisible\! This project presents a powerful CNN-based steganalysis tool designed to **detect hidden data** embedded within images, complete with an intuitive Streamlit web application for real-time analysis.
 **NOTEBOOK**: https://www.kaggle.com/code/zobayer0x01/steganography-detector
 
 ## 🌟 Features
@@ -17,9 +17,7 @@ In an era where digital communication is pervasive, steganography poses a subtle
 
 ## 📸 Demo / Screenshots
 
-[Screenshot of Streamlit app in action]
-[Screenshot of prediction output]
-
+![Steganalysis App Demo](steg-detect.gif)
 ## 📊 Dataset
 
 Uses the [**StegoImagesDataset**](https://www.kaggle.com/datasets/marcozuppelli/stegoimagesdataset/data) from Kaggle.
@@ -27,7 +25,7 @@ Uses the [**StegoImagesDataset**](https://www.kaggle.com/datasets/marcozuppelli/
 
 ## 🛠️ Technologies
 
-  * Python 3.x
+  * Python 3.11
   * TensorFlow / Keras
   * NumPy, Pillow, Scikit-learn
   * Streamlit
